@@ -1,23 +1,9 @@
-/**
- * eslint-disable @next/next/no-img-element
- *
- * @format
- */
+'use client';
 
-/**
- * eslint-disable @next/next/no-img-element
- *
- * @format
- */
-
-/** @format */
-"use client";
-
-import { DataTable } from "@/components/DataTable";
-import { ColumnDef } from "@tanstack/react-table";
-import React from "react";
-import PageTitle from "@/components/PageTitle";
-import { cn } from "@/lib/utils";
+import { DataTable } from '@/components/DataTable';
+import { ColumnDef } from '@tanstack/react-table';
+import React from 'react';
+import PageTitle from '@/components/PageTitle';
 
 type Props = {};
 
@@ -28,31 +14,31 @@ interface Setting {
 
 const columns: ColumnDef<Setting>[] = [
   {
-    accessorKey: "category",
-    header: "Category"
+    accessorKey: 'category',
+    header: 'Category',
   },
   {
-    accessorKey: "value",
-    header: "Value"
-  }
+    accessorKey: 'value',
+    header: 'Value',
+  },
 ];
 const data: Setting[] = [
   {
-    category: "Account",
-    value: true
+    category: 'Account',
+    value: true,
   },
   {
-    category: "Notifications",
-    value: false
+    category: 'Notifications',
+    value: false,
   },
   {
-    category: "Language",
-    value: "English"
+    category: 'Language',
+    value: 'English',
   },
   {
-    category: "Theme",
-    value: "Dark"
-  }
+    category: 'Theme',
+    value: 'Dark',
+  },
 ];
 
 export default function SettingsPage({}: Props) {

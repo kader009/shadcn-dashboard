@@ -11,7 +11,7 @@ const Calendars = () => {
   const [value, onChange] = useState<Value>(new Date());
 
   return (
-    <div className='max-w-screen h-screen'>
+    <div className='w-96'>
       <Calendar onChange={onChange} value={value} />
     </div>
   );
