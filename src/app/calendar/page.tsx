@@ -1,18 +1,22 @@
 'use client'
-import { useState } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-
-type ValuePiece = Date | null;
-
-type Value = ValuePiece | [ValuePiece, ValuePiece];
+import Fullcalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
 
 const Calendars = () => {
-  const [value, onChange] = useState<Value>(new Date());
-
   return (
-    <div className='w-96'>
-      <Calendar onChange={onChange} value={value} />
+    <div className="max-w-screen">
+      <Fullcalendar
+        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+        initialView={'dayGridMonth'}
+        headerToolbar={{
+          start: 'today prev,next',
+          center: 'title',
+          end: 'dayGridMonth,timeGridWeek,timeGridDay',
+        }}
+        height={'90vh'}
+      />
     </div>
   );
 };
