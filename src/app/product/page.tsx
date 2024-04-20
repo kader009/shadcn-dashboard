@@ -25,9 +25,12 @@ export interface Rating {
 }
 
 const ProductPage = async () => {
-  const response = await fetch(`https://fakestoreapi.com/products`);
+  const response = await fetch(`https://fakestoreapi.com/products`, {
+    next: {
+      revalidate: 3600,
+    },
+  });
   const products = await response.json();
-  // console.log(products);
   return (
     <div>
       <h1 className="ms-10 mb-5 capitalize text-2xl font-bold">
@@ -41,24 +44,30 @@ const ProductPage = async () => {
               <CardHeader>
                 <div className="flex justify-center items-center">
                   <Image
+                    priority={true}
                     src={product.image}
                     width={200}
                     height={130}
                     alt="product image"
                   />
                 </div>
-                <CardTitle className="text-[1.2rem]">{product.title.slice(0, 150) + '...'}</CardTitle>
-                <CardDescription className='text-blue-600 font-bold'>
+                <CardTitle className="text-[1.2rem]">
+                  {product.title.slice(0, 150) + '...'}
+                </CardTitle>
+                <CardDescription className="text-blue-600 font-bold">
                   <span>Price: $</span> {product.price}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className='text-gray-600'>{product.description.slice(0, 200) + '...'}</p>
+                <p className="text-gray-600">
+                  {product.description.slice(0, 200) + '...'}
+                </p>
               </CardContent>
               <CardFooter>
-                <p className=' text-sm text-gray-600'>Category : {product.category}</p>
+                <p className=" text-sm text-gray-600">
+                  Category : {product.category}
+                </p>
               </CardFooter>
-              
             </Card>
           </div>
         ))}

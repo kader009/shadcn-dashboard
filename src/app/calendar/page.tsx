@@ -15,6 +15,7 @@ const Calendars = () => {
           center: 'title',
           end: 'dayGridMonth,timeGridWeek,timeGridDay',
         }}
+        editable={true}
         height={'90vh'}
       />
     </div>

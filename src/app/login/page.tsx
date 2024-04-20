@@ -26,7 +26,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { useRef } from 'react';
-import login from '@/asset/image/undraw_Login_re_4vu2.png'
+import login from '@/asset/image/undraw_Login_re_4vu2.png';
 import Image from 'next/image';
 
 const LoginPage = () => {
@@ -38,9 +38,7 @@ const LoginPage = () => {
         <Card className="w-[500px]">
           <CardHeader>
             <CardTitle>Login Your Self</CardTitle>
-            <CardDescription>
-              Go For Next Adventure.
-            </CardDescription>
+            <CardDescription>Go For Next Adventure.</CardDescription>
           </CardHeader>
           <CardContent>
             <form>
@@ -50,12 +48,12 @@ const LoginPage = () => {
                   <Input id="name" placeholder="Name here" />
                 </div>
                 <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="name">Email</Label>
-                  <Input id="name" placeholder="Email here" />
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" placeholder="Email here" />
                 </div>
                 <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="name">Password</Label>
-                  <Input id="name" placeholder="Password here" />
+                  <Label htmlFor="password">Password</Label>
+                  <Input id="password" placeholder="Password here" />
                 </div>
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="framework">Choose Framework</Label>
@@ -81,7 +79,7 @@ const LoginPage = () => {
         </Card>
       </div>
       <div>
-        <Image src={login} alt='image'/>
+        <Image src={login} alt="image" priority={true} />
       </div>
     </div>
   );
