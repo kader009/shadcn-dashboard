@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -42,21 +43,22 @@ const ProductPage = async () => {
                   <Image
                     src={product.image}
                     width={200}
-                    height={230}
+                    height={130}
                     alt="product image"
                   />
                 </div>
-                <CardTitle className="text-[1.2rem]">{product.title}</CardTitle>
-                <CardDescription>
-                  <span>Price:</span> {product.price}
+                <CardTitle className="text-[1.2rem]">{product.title.slice(0, 150) + '...'}</CardTitle>
+                <CardDescription className='text-blue-600 font-bold'>
+                  <span>Price: $</span> {product.price}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p>{product.description}</p>
+                <p className='text-gray-600'>{product.description.slice(0, 200) + '...'}</p>
               </CardContent>
               <CardFooter>
-                <p>Category: {product.category}</p>
+                <p className=' text-sm text-gray-600'>Category : {product.category}</p>
               </CardFooter>
+              
             </Card>
           </div>
         ))}

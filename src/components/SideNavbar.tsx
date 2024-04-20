@@ -13,6 +13,7 @@ import {
   ChevronRight,
   ShoppingBasket,
   CalendarDays,
+  LogIn
 } from 'lucide-react';
 import { Button } from './ui/button';
 
@@ -73,6 +74,12 @@ export default function SideNavbar({}: Props) {
             title: 'Calendar',
             href: '/calendar',
             icon: CalendarDays,
+            variant: 'ghost',
+          },
+          {
+            title: 'Login',
+            href: '/login',
+            icon: LogIn,
             variant: 'ghost',
           },
           {
