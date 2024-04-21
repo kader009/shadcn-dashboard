@@ -1,8 +1,6 @@
-/** @format */
-
-import React from "react";
-import { LucideIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
+import React from 'react';
+import { LucideIcon } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export type CardProps = {
   label: string;
@@ -33,7 +31,7 @@ export function CardContent(props: React.HTMLAttributes<HTMLDivElement>) {
     <div
       {...props}
       className={cn(
-        "flex w-full flex-col gap-3 rounded-xl border p-5 shadow",
+        'flex w-full flex-col gap-3 rounded-xl border p-5 shadow',
         props.className
       )}
     />
