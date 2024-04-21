@@ -14,6 +14,7 @@ import {
   ShoppingBasket,
   CalendarDays,
   LogIn,
+  Table2
 } from 'lucide-react';
 import { Button } from './ui/button';
 
@@ -77,9 +78,9 @@ export default function SideNavbar({}: Props) {
             variant: 'ghost',
           },
           {
-            title: 'Map',
-            href: '/map',
-            icon: CalendarDays,
+            title: 'Table',
+            href: '/table',
+            icon: Table2,
             variant: 'ghost',
           },
           {
