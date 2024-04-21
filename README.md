@@ -27,7 +27,13 @@
 ### How To Use This Project - 
 
 > clone this project
-` inline code `
-```   i hope this    ```
+` Repository `
 
-`Inline code` has back-ticks around it
+> open this project with vscode editor and run  ` npm install  `
+
+> if you use yarn or pnpm ` use this command with your own way `
+
+> than run this command ` npm run dev `  the project will be run your browser in ` 3000 port`
+
+
+## Last but not the list if you have any question ask me fill free.
