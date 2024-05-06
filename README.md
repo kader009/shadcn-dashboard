@@ -8,6 +8,7 @@
 4. Javascript
 5. Css
 6. Shadcn UI
+7. Reactjs
 
 #### Responsive for - 
 1. Mobile
