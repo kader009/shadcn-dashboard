@@ -41,12 +41,12 @@ const ProductPage = async () => {
                 <div className="flex justify-center items-center">
                   <div className="relative w-[200px] h-[200px]">
                     <Image
-                    className='rounded-full'
+                      className="rounded-full"
                       priority={true}
-                      src='https://images.unsplash.com/photo-1652249418530-f5efa38f9d06?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                      src="https://images.unsplash.com/photo-1652249418530-f5efa38f9d06?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="product image"
                       layout="fill"
-                      objectFit="cover" // or 'cover'
+                      objectFit="cover"
                     />
                   </div>
                 </div>
@@ -56,6 +56,7 @@ const ProductPage = async () => {
                 <CardDescription className="text-blue-600 font-bold">
                   <span>Price: $</span> {product.price}
                 </CardDescription>
+                
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
