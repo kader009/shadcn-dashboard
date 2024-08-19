@@ -23,12 +23,15 @@ import {
 } from '@/components/ui/select';
 import login from '@/asset/image/undraw_Login_re_4vu2.png';
 import Image from 'next/image';
+import toast, { Toaster } from 'react-hot-toast';
 
 // Zod schema for form validation
 const loginSchema = z.object({
   name: z.string().min(1, { message: 'Name is required' }),
   email: z.string().email({ message: 'Invalid email address' }),
-  password: z.string().min(6, { message: 'Password must be at least 6 characters' }),
+  password: z
+    .string()
+    .min(6, { message: 'Password must be at least 6 characters' }),
   framework: z.string().min(1, { message: 'Framework is required' }),
 });
 
@@ -39,16 +42,23 @@ const LoginPage = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset, // Added reset to clear the form
+    setValue,
   } = useForm<LoginForm>({
     resolver: zodResolver(loginSchema),
   });
 
   const onSubmit = (data: LoginForm) => {
-    console.log('Form submitted:', data);
+    // Display a toast notification
+    toast.success('Thank you! for login.');
+
+    // Clear the form values
+    reset();
   };
 
   return (
     <div className="flex justify-around sm:flex-col items-center gap-4 lg:flex-row">
+      <Toaster /> {/* This is required to display the toast notifications */}
       <div>
         <Card className="w-[500px]">
           <CardHeader>
@@ -66,7 +76,9 @@ const LoginPage = () => {
                     {...register('name')}
                   />
                   {errors.name && (
-                    <p className="text-red-500 text-sm">{errors.name.message}</p>
+                    <p className="text-red-500 text-sm">
+                      {errors.name.message}
+                    </p>
                   )}
                 </div>
                 <div className="flex flex-col space-y-1.5">
@@ -78,7 +90,9 @@ const LoginPage = () => {
                     {...register('email')}
                   />
                   {errors.email && (
-                    <p className="text-red-500 text-sm">{errors.email.message}</p>
+                    <p className="text-red-500 text-sm">
+                      {errors.email.message}
+                    </p>
                   )}
                 </div>
                 <div className="flex flex-col space-y-1.5">
@@ -90,13 +104,15 @@ const LoginPage = () => {
                     {...register('password')}
                   />
                   {errors.password && (
-                    <p className="text-red-500 text-sm">{errors.password.message}</p>
+                    <p className="text-red-500 text-sm">
+                      {errors.password.message}
+                    </p>
                   )}
                 </div>
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="framework">Choose Framework</Label>
                   <Select
-                    {...register('framework')}
+                    onValueChange={(value) => setValue('framework', value)}
                   >
                     <SelectTrigger id="framework">
                       <SelectValue placeholder="Select" />
@@ -109,7 +125,9 @@ const LoginPage = () => {
                     </SelectContent>
                   </Select>
                   {errors.framework && (
-                    <p className="text-red-500 text-sm">{errors.framework.message}</p>
+                    <p className="text-red-500 text-sm">
+                      {errors.framework.message}
+                    </p>
                   )}
                 </div>
               </div>
