@@ -39,6 +39,7 @@
     "react-dom": "^18",
     "react-helmet": "^6.1.0",
     "react-helmet-async": "^2.0.4",
+    "react-hook-form": "^7.52.2",
     "recharts": "^2.10.3",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",

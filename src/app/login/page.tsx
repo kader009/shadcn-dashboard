@@ -17,21 +17,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import Autoplay from 'embla-carousel-autoplay';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
-import { useRef } from 'react';
 import login from '@/asset/image/undraw_Login_re_4vu2.png';
 import Image from 'next/image';
 
 const LoginPage = () => {
-  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
-
   return (
     <div className="flex justify-around sm:flex-col items-center gap-4 lg:flex-row">
       <div>
@@ -45,15 +34,15 @@ const LoginPage = () => {
               <div className="grid w-full items-center gap-4">
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Name here" />
+                  <Input id="name" placeholder="Name here" required />
                 </div>
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" placeholder="Email here" />
+                  <Input id="email" placeholder="Email here" required/>
                 </div>
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="password">Password</Label>
-                  <Input id="password" placeholder="Password here" />
+                  <Input id="password" placeholder="Password here" required/>
                 </div>
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="framework">Choose Framework</Label>
@@ -65,7 +54,7 @@ const LoginPage = () => {
                       <SelectItem value="next">Next.js</SelectItem>
                       <SelectItem value="sveltekit">React.js</SelectItem>
                       <SelectItem value="astro">Rust</SelectItem>
-                      <SelectItem value="nuxt">Nuxt.js</SelectItem>
+                      <SelectItem value="react">Nuxt.js</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -73,7 +62,9 @@ const LoginPage = () => {
             </form>
           </CardContent>
           <CardFooter className="flex justify-between">
-            <Button variant="outline">Cancel</Button>
+            <Button variant="outline" type="submit">
+              Cancel
+            </Button>
             <Button>Login</Button>
           </CardFooter>
         </Card>

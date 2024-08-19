@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'; 
 import {
   Card,
   CardContent,
@@ -34,7 +34,6 @@ const ProductPage = async () => {
   return (
     <div>
       <h1 className="ms-10 mb-5 capitalize text-2xl font-bold">
-        {' '}
         New products
       </h1>
       <div className="grid grid-cols-2 justify-center sm:grid-cols-1 lg:grid-cols-2  gap-3 mx-10">
