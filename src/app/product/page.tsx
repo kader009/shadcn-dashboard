@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button'; 
 import {
   Card,
   CardContent,
@@ -25,7 +24,7 @@ export interface Rating {
 }
 
 const ProductPage = async () => {
-  const response = await fetch(`https://fakestoreapi.com/products`, {
+  const response = await fetch(`https://dummyjson.com/products`, {
     next: {
       revalidate: 3600,
     },
@@ -33,22 +32,23 @@ const ProductPage = async () => {
   const products = await response.json();
   return (
     <div>
-      <h1 className="ms-10 mb-5 capitalize text-2xl font-bold">
-        New products
-      </h1>
-      <div className="grid grid-cols-2 justify-center sm:grid-cols-1 lg:grid-cols-2  gap-3 mx-10">
-        {products.map((product: Products) => (
+      <h1 className="ms-10 mb-5 capitalize text-2xl font-bold">New products</h1>
+      <div className="grid grid-cols-2 justify-center sm:grid-cols-1 lg:grid-cols-3 gap-3 mx-10">
+        {products?.products?.map((product: Products) => (
           <div key={product.id}>
-            <Card>
+            <Card className="w-96 min-h-72">
               <CardHeader>
                 <div className="flex justify-center items-center">
-                  <Image
-                    priority={true}
-                    src={product.image}
-                    width={200}
-                    height={130}
-                    alt="product image"
-                  />
+                  <div className="relative w-[200px] h-[200px]">
+                    <Image
+                    className='rounded-full'
+                      priority={true}
+                      src='https://images.unsplash.com/photo-1652249418530-f5efa38f9d06?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                      alt="product image"
+                      layout="fill"
+                      objectFit="cover" // or 'cover'
+                    />
+                  </div>
                 </div>
                 <CardTitle className="text-[1.2rem]">
                   {product.title.slice(0, 150) + '...'}

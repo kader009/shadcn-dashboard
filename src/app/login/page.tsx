@@ -38,11 +38,11 @@ const LoginPage = () => {
                 </div>
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" placeholder="Email here" required/>
+                  <Input id="email" placeholder="Email here" required />
                 </div>
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="password">Password</Label>
-                  <Input id="password" placeholder="Password here" required/>
+                  <Input id="password" placeholder="Password here" required />
                 </div>
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="framework">Choose Framework</Label>
@@ -52,9 +52,9 @@ const LoginPage = () => {
                     </SelectTrigger>
                     <SelectContent position="popper">
                       <SelectItem value="next">Next.js</SelectItem>
-                      <SelectItem value="sveltekit">React.js</SelectItem>
-                      <SelectItem value="astro">Rust</SelectItem>
-                      <SelectItem value="react">Nuxt.js</SelectItem>
+                      <SelectItem value="react">React.js</SelectItem>
+                      <SelectItem value="rust">Rust</SelectItem>
+                      <SelectItem value="nuxt">Nuxt.js</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
