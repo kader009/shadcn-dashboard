@@ -21,7 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import login from '@/asset/image/undraw_Login_re_4vu2.png';
+import login from '@/asset/image/undraw_undraw_undraw_undraw_sign_up_ln1s_-1-_s4bc_-1-_ee41_(1)_kf4d.png';
 import Image from 'next/image';
 import toast, { Toaster } from 'react-hot-toast';
 
