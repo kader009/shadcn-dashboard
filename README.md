@@ -22,7 +22,8 @@
 2. Product - use nextjs fetch funtionality
 3. Calendar
 4. User
-5. Login
+5. Login (validation with zod)
+6. React Hook Form
 
 
 ### How To Use This Project - 

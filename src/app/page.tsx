@@ -6,30 +6,31 @@ import SalesCard, { SalesProps } from '@/components/SalesCard';
 
 const cardData: CardProps[] = [
   {
-    label: 'Total Revenue',
-    amount: '$45,231.89',
-    discription: '+20.1% from last month',
+    label: 'Gross Revenue',
+    amount: '$50,000.00',
+    discription: 'Increased by 25% compared to last month',
     icon: DollarSign,
   },
   {
-    label: 'Subscriptions',
-    amount: '+2350',
-    discription: '+180.1% from last month',
+    label: 'New Subscribers',
+    amount: '+2,500',
+    discription: 'Up by 200% from the previous month',
     icon: Users,
   },
   {
-    label: 'Sales',
-    amount: '+12,234',
-    discription: '+19% from last month',
+    label: 'Total Orders',
+    amount: '+15,000',
+    discription: 'Grew by 22% since last month',
     icon: CreditCard,
   },
   {
-    label: 'Active Now',
-    amount: '+573',
-    discription: '+201 since last hour',
+    label: 'Currently Online',
+    amount: '+600',
+    discription: 'Up by 250 in the last hour',
     icon: Activity,
   },
 ];
+
 
 const uesrSalesData: SalesProps[] = [
   {

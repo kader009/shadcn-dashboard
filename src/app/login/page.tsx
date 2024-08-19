@@ -25,6 +25,7 @@ import login from '@/asset/image/undraw_Login_re_4vu2.png';
 import Image from 'next/image';
 import toast, { Toaster } from 'react-hot-toast';
 
+
 // Zod schema for form validation
 const loginSchema = z.object({
   name: z.string().min(1, { message: 'Name is required' }),
