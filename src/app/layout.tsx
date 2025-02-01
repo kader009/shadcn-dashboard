@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '../lib/utils';
 import dynamic from 'next/dynamic';
+import { ThemeProvider } from '@/components/Theme-provider';
 
 const SideNavbar = dynamic(() => import('@/components/SideNavbar'), {
   ssr: false,
@@ -33,11 +34,18 @@ export default function RootLayout({
           inter.className
         )}
       >
-        {/* sidebar */}
-        <SideNavbar />
-        {/* main page */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {/* sidebar */}
+          <SideNavbar />
+          {/* main page */}
 
-        <div className="p-8 w-full">{children}</div>
+          <div className="p-8 w-full">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   );
